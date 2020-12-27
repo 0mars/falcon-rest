@@ -11,4 +11,4 @@ stages:
 flake8:
   stage: Static Analysis
   script:
-    - flake8 --max-line-length=120 sample/*.py
+    - pipenv run flake8 --max-line-length=120 sample/*.py

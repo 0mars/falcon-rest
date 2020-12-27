@@ -1,0 +1,26 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+flake8 = "*"
+pipenv-to-requirements = "*"
+black = "==20.8b1"
+isort = "*"
+mypy = "*"
+pre-commit = "*"
+pytest = "*"
+pytest-cov = "*"
+
+[packages]
+falcon = "==1.2.0"
+falcon-autocrud = "==1.0.31"
+gunicorn = "==19.7.1"
+jsonschema = "==2.6.0"
+python-mimeparse = "==1.6.0"
+six = "==1.10.0"
+SQLAlchemy = "==1.1.13"
+
+[requires]
+python_version = "3.9"

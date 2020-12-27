@@ -1,0 +1,30 @@
+image: "python:3.9"
+
+before_script:
+  - python --version
+  - pip install pipenv
+  - pipenv install --deploy --dev
+
+stages:
+  - Static Analysis
+  - Test
+
+flake8:
+  stage: Static Analysis
+  script:
+    - pipenv run flake8
+
+black:
+  stage: Static Analysis
+  script:
+    - pipenv run black --check .
+
+mypy:
+  stage: Static Analysis
+  script:
+    - pipenv run mypy
+
+pytest:
+  stage: Test
+  script:
+    - pipenv run pytest --cov --cov-fail-under=100

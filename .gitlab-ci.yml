@@ -3,7 +3,7 @@ image: "python:3.9"
 before_script:
   - python --version
   - pip install pipenv
-  - pipenv install --ignore-pipfile
+  - pipenv install --deploy --dev
 
 stages:
   - Static Analysis

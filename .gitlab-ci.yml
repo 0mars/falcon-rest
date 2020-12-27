@@ -7,8 +7,24 @@ before_script:
 
 stages:
   - Static Analysis
+  - Test
 
 flake8:
   stage: Static Analysis
   script:
     - pipenv run flake8 --max-line-length=120 sample/*.py
+
+black:
+  stage: Static Analysis
+  script:
+    - pipenv run black --check .
+
+mypy:
+  stage: Static Analysis
+  script:
+    - pipenv run mypy
+
+mypy:
+  stage: Test
+  script:
+    - pipenv run pytest --cov --cov-fail-under=100

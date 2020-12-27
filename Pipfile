@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 flake8 = "*"
+pipenv-to-requirements = "*"
 
 [packages]
 falcon = "==1.2.0"
